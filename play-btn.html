@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Play button</title>
+    <style>
+        .playbtn {
+
+            height: 100px;
+            width: 100px;
+            background-color: grey;
+            margin: 50px auto;
+            border-radius: 50%;
+
+            display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 30px;
+            position: relative;
+            z-index: 1;
+			
+        }
+        
+        .playbtn:hover { background-color: darkblue; color: white ;}
+        .playbtn:hover .a,.b,.c { background-color: darkblue;}
+
+        .a, .b, .c {
+
+            height: 100px;
+            width: 100px;
+            background-color: grey;
+            
+            border-radius: 50%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            /* opacity: 1; */
+        }
+
+        .a {animation: ScaleMe1 1s linear infinite; }
+        .b {animation: ScaleMe2 1s linear infinite; }
+        .c {animation: ScaleMe3 1s linear infinite; }
+
+
+        @keyframes ScaleMe1
+		{
+			from{transform: scale(1);opacity: 1}
+			to{transform: scale(1.4);opacity: 0.2}
+		}
+
+		@keyframes ScaleMe2
+		{
+			from{transform: scale(1);opacity: 1}
+			to{transform: scale(1.8);opacity: 0.2}
+		}
+
+		@keyframes ScaleMe3
+		{
+			from{transform: scale(1);opacity: 1}
+			to{transform: scale(2.2);opacity: 0.2}
+		}
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="playbtn">
+        <i class="fa-solid fa-play"></i>
+        <span class="a"></span>
+        <span class="b"></span>
+        <span class="c"></span>
+    </div>
+</body>
+</html>
